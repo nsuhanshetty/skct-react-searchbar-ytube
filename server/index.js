@@ -26,7 +26,7 @@ app.get('/search/:id', (req, res) => {
     var searchParam = req.params.id;
     //todo: Break the link into object 
     //todo: use secret for sensitive data 
-    const vlink = 'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCJxHxs-4-O7qmlWgBn8pvsQ&maxResults=5&q=' + searchParam + '&key=AIzaSyDBnlRkTh0MWv4XjrTdHDRysDT7n8zfK30'
+    const vlink = 'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCJxHxs-4-O7qmlWgBn8pvsQ&maxResults=5&q=' + searchParam + '&key=<apikey>'
     const jmesExpsn = "items[?id.kind== 'youtube#video'].{videoId:id.videoId,title:snippet.title,description:snippet.description,thumbnailUrl:snippet.thumbnails.default.url}";
     axios.get(vlink)
         .then(response => {
